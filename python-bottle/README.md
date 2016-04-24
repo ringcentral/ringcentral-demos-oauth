@@ -3,7 +3,7 @@ RingCentral 3-Legged OAuth Demo in Python
 
 ## Overview
 
-This is a quick 3-legged OAuth demo that runs using Python 2.7 and Bottle.
+This is a quick 3-legged OAuth demo that runs using Python 2.7 and Bottle with the [RingCentral Python SDK](https://github.com/ringcentral/ringcentral-python) v0.6.1.
 
 ## Installation
 

@@ -3,7 +3,7 @@ RingCentral 3-Legged OAuth Demo in Ruby
 
 ## Overview
 
-This is a quick 3-legged OAuth demo that runs using Ruby and Sinatra.
+This is a quick 3-legged OAuth demo that runs using Ruby and Sinatra with the [RingCentral Ruby SDK](https://github.com/grokify/ringcentral-sdk-ruby) v1.2.1.
 
 ## Installation
 

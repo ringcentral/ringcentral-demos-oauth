@@ -3,7 +3,7 @@ RingCentral 3-Legged OAuth Demo in JavaScript
 
 ## Overview
 
-This is a quick 3-legged OAuth demo that runs using client-side JavaScript
+This is a quick 3-legged OAuth demo that runs using client-side JavaScript with the [RingCentral JavaScript SDK](https://github.com/ringcentral/ringcentral-js) v2.0.6.
 
 ## Installation
 

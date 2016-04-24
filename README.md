@@ -1,7 +1,7 @@
 RingCentral OAuth Demos
 =======================
 
-This project provides 3-legged OAuth demos for the RingCentral API in various languages.
+This project provides 3-legged OAuth demos for the RingCentral API in various languages using official and community SDKs.
 
 For more information, see the [RingCentral API Developer Guide on Authorization Code Flow](https://developer.ringcentral.com/api-docs/latest/index.html#!#AuthorizationCodeFlow).
 
