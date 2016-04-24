@@ -24,6 +24,12 @@ $ cp config-sample.env.txt .env
 $ vi .env
 ```
 
+In the [Developer Portal](http://developer.ringcentral.com/), ensure the redirect URI in your config file has been entered in your app configuration. By default, the URL is set to for this demo:
+
+```
+http://localhost:8080/callback
+```
+
 ## Usage
 
 Open the web page:
@@ -35,7 +41,7 @@ $ python app.py
 Go to the URL:
 
 ```
-http://localhost:4567
+http://localhost:8080
 ````
 
 Then click the <input type="button" value="Login with RingCentral"> button to authorize the demo app and view the access token.

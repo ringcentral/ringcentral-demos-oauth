@@ -22,6 +22,12 @@ $ cp config-sample.js config.js
 $ vi config.js
 ```
 
+In the [Developer Portal](http://developer.ringcentral.com/), ensure the redirect URI in your config file has been entered in your app configuration. By default, the URL is set to for this demo:
+
+```
+http://localhost:8080/callback.html
+```
+
 ## Usage
 
 Open the web page:
