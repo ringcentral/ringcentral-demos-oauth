@@ -48,5 +48,11 @@ var oauth = new OAuthCode(config);
         <p>Access Token</p>
         <pre style="background-color:#efefef;padding:1em;overflow-x:scroll">{{ token_json }}</pre>
 
+        <p>More info:</p>
+        <ul>
+            <li><a href="https://developer.ringcentral.com/api-docs/latest/index.html#!#AuthorizationCodeFlow">RingCentral API Developer Guide</a></li>
+            <li><a href="https://github.com/grokify/ringcentral-oauth-demos">GitHub repo</a>
+            <li><a href="https://github.com/grokify/ringcentral-oauth-demos/tree/master/python-bottle">GitHub repo Python README</a></p>
+        </ul>
     </body>
 </html>

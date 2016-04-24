@@ -4,8 +4,9 @@ require 'sinatra'
 require 'multi_json'
 require 'ringcentral_sdk'
 
-# Enter config in .env file
+set :port, ENV['MY_APP_PORT']
 
+# Enter config in .env file
 client = RingCentralSdk::REST::Client.new
 config = RingCentralSdk::REST::Config.new.load_dotenv
 client.set_app_config config.app

@@ -5,14 +5,18 @@ from dotenv import load_dotenv
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 
-from bottle import request, route, run, template
-
 import base64
+import json
 import requests
 import urllib
 
+from bottle import request, route, run, template
+from ringcentral import SDK
+
 myState = 'myState'
 token_json = '{}'
+
+rcsdk = SDK(os.environ.get('RC_APP_KEY'), os.environ.get('RC_APP_SECRET'), os.environ.get('RC_APP_SERVER_URL'))
 
 def authorize_uri(options):
     base_url = os.environ.get('RC_APP_SERVER_URL') + '/restapi/oauth/authorize'
@@ -49,13 +53,19 @@ def index():
         'state': myState
     })
     redirect_uri = os.environ.get('RC_APP_REDIRECT_URL')
+    token = rcsdk.platform().auth().data()
+    token_json = ''
+    if token['access_token']:
+        token_json = json.dumps(token, sort_keys=True,
+            indent=4, separators=(',', ': '))
 
-    return template('index', authorize_uri=auth_uri, redirect_uri=redirect_uri, token_json='')
+    return template('index', authorize_uri=auth_uri, redirect_uri=redirect_uri, token_json=token_json)
 
 @route('/callback')
 def callback():
     auth_code = request.params['code']
     token_json = get_access_token(auth_code)
+    rcsdk.platform().auth().set_data(json.loads(token_json))
     return template('index', authorize_uri='', redirect_uri='', token_json=token_json)
     return auth_code
 
