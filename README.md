@@ -5,6 +5,11 @@ This project provides 3-legged OAuth demos for the RingCentral API in various la
 
 For more information, see the [RingCentral API Developer Guide on Authorization Code Flow](https://developer.ringcentral.com/api-docs/latest/index.html#!#AuthorizationCodeFlow).
 
+Demos are provided for:
+
+* [Python 2.7 with Bottle](https://github.com/grokify/ringcentral-oauth-demos/tree/master/python-bottle)
+* [Ruby with Sinatra](https://github.com/grokify/ringcentral-oauth-demos/tree/master/ruby-sinatra)
+
 ## Client-Side Web Apps
 
 | Page | Description |
