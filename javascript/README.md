@@ -35,7 +35,7 @@ $ http-server public
 Go to the URL:
 
 ```
-http://localhost:4567
+http://localhost:8080
 ````
 
 Then click the <input type="button" value="Login with RingCentral"> button to authorize the demo app and view the access token.
