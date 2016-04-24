@@ -1,0 +1,6 @@
+php/composer.lock
+php/composer.phar
+php/vendor
+python-bottle/.env
+ruby-sinatra/.env
+ruby-sinatra/Gemfile.lock
