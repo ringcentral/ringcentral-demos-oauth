@@ -32,6 +32,7 @@ def authorize_uri(options):
 
 def get_access_token(auth_code):
     token_url = os.environ.get('RC_APP_SERVER_URL') + '/restapi/oauth/token'
+
     values = {'grant_type' : 'authorization_code',
         'code' : auth_code,
         'redirect_uri' : os.environ.get('RC_APP_REDIRECT_URL') }
@@ -49,9 +50,7 @@ def get_access_token(auth_code):
 
 @route('/')
 def index():
-    auth_uri = authorize_uri({
-        'state': myState
-    })
+    auth_uri = authorize_uri({'state': myState})
     redirect_uri = os.environ.get('RC_APP_REDIRECT_URL')
     token = rcsdk.platform().auth().data()
     token_json = ''
@@ -67,6 +66,5 @@ def callback():
     token_json = get_access_token(auth_code)
     rcsdk.platform().auth().set_data(json.loads(token_json))
     return template('index', authorize_uri='', redirect_uri='', token_json=token_json)
-    return auth_code
 
 run(host=os.environ.get('MY_APP_HOST'), port=os.environ.get('MY_APP_PORT'), debug=True)
