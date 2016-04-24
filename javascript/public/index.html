@@ -44,12 +44,13 @@ var OAuthCode = function(rcsdk, config) {
                                 win.close();
                             });
                     } else {
-                        console.log("E_NO_CODE")
+                        console.log("E_NO_CODE");
                         win.close();
                     }                 
                 }
             } catch(e) {
-                console.log(e)
+                console.log(e);
+                win.close();
             }
         }, 100);
     }
