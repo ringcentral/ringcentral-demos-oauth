@@ -1,14 +1,16 @@
 RingCentral OAuth Demos
 =======================
 
-This project provides OAuth 2.0 demos for the RingCentral API in various languages.
+This project provides 3-legged OAuth demos for the RingCentral API in various languages.
+
+For more information, see the [RingCentral API Developer Guide on Authorization Code Flow](https://developer.ringcentral.com/api-docs/latest/index.html#!#AuthorizationCodeFlow).
 
 ## Client-Side Web Apps
 
 | Page | Description |
 |------|-------------|
 | Login page | This is any page with a Login button. This page will open the popup and listen for the redirect. For client-side processing, this page will also retrieve the query string parameters from the callback page. |
-| Callback page | For client-side processing, this page can be anywhere but it shouldn't be redirected to a URL without the `redirect_uri` in it given the client-side polling implementation. |
+| Callback page | The minimum requirement is for the page to not be redirected to a URL without the `redirect_uri` since the parent window will poll for the redirect. |
 
 ## Server-Side Web Apps
 
@@ -16,5 +18,5 @@ In server-side web app such as PHP, Rails, Django, etc. where the operations occ
 
 | Page | Description |
 |------|-------------|
-| Login page | This is any page with a Login button |
-| Callback page | While the callback page does not need to return any data as the popup will be closed, the query string does need to be processed on the server side so the `access_token` can be loaded into the server-side app. |
+| Login page | This is any page with a Login button. This page will open the popup and listen for the redirect, after which it will shut down the popup window. There's no need to do any client-side processing except to shutdown the popup and refresh the page. |
+| Callback page | The callback query string will be processed server-side. Nothing is needed client-side. |
