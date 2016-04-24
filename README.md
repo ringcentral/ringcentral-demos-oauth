@@ -7,8 +7,11 @@ For more information, see the [RingCentral API Developer Guide on Authorization 
 
 Demos are provided for:
 
-* [Python 2.7 with Bottle](https://github.com/grokify/ringcentral-oauth-demos/tree/master/python-bottle)
-* [Ruby with Sinatra](https://github.com/grokify/ringcentral-oauth-demos/tree/master/ruby-sinatra)
+* Client-Side Web Apps
+  * JavaScript with Bower
+* Server-Side Web Apps
+  * [Python 2.7 with Bottle](https://github.com/grokify/ringcentral-oauth-demos/tree/master/python-bottle)
+  * [Ruby with Sinatra](https://github.com/grokify/ringcentral-oauth-demos/tree/master/ruby-sinatra)
 
 ## Client-Side Web Apps
 

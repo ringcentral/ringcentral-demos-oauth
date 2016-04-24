@@ -6,11 +6,10 @@ dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 
 from bottle import request, route, run, template
-import urllib
-import requests
-#from urllib import parse, request, urlencode
 
 import base64
+import requests
+import urllib
 
 myState = 'myState'
 token_json = '{}'
