@@ -23,3 +23,13 @@ $ cd ringcentral-oauth-demos/python-bottle
 $ cp config-sample.env.txt .env
 $ vi .env
 ```
+
+## Usage
+
+Open the web page:
+
+```bash
+$ python app.py
+```
+
+Then click the <input type="button" value="Login with RingCentral"> button to authorize the demo app and view the access token.

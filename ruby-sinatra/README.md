@@ -33,7 +33,7 @@ $ cp config-sample.env.txt .env
 $ vi .env
 ```
 
-## Running the Demo
+## Usage
 
 Open the web page:
 
