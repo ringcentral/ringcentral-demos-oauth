@@ -1,7 +1,11 @@
 RingCentral OAuth Demos
 =======================
 
-This project provides 3-legged OAuth demos for the RingCentral API in various languages using [official and community SDKs](https://developer.ringcentral.com/library/sdks.html).
+This project provides 3-legged OAuth demos using the [OAuth 2.0](https://tools.ietf.org/html/rfc6749) [Authorization Code flow](https://tools.ietf.org/html/rfc6749#section-1.3.1) for the RingCentral API in various languages using [official and community SDKs](https://developer.ringcentral.com/library/sdks.html).
+
+The authorization code flow is useful for developers because it delegates the entire authentication, authorization, reset password and SAML-based single sign-on (SSO) flows to RingCentral who provides a consistent user experience.
+
+The demos here so far use the popup approach for 3-legged OAuth.
 
 For more information, see the [RingCentral API Developer Guide on Authorization Code Flow](https://developer.ringcentral.com/api-docs/latest/index.html#!#AuthorizationCodeFlow).
 
@@ -15,6 +19,8 @@ Demos are provided for:
 
 ## Client-Side Web Apps
 
+Client-side web apps using JavaScript have a feature in that the callback URL does not need to contain any processing either on the client-side or the server-side. The entire flow can be managed by the parent JavaScript page that is initiating the login.
+
 | Page | Description |
 |------|-------------|
 | Login page | This is any page with a Login button. This page will open the popup and listen for the redirect. For client-side processing, this page will also retrieve the query string parameters from the callback page. |
@@ -22,7 +28,7 @@ Demos are provided for:
 
 ## Server-Side Web Apps
 
-In server-side web app such as PHP, Rails, Django, etc. where the operations occur are slightly different.
+In server-side web app such as PHP, Rails, Django, etc. where the operations occur are slightly different. In these cases, the callback URL should process the callback to retrieve the authorization code and exchange it for an access token.
 
 | Page | Description |
 |------|-------------|
