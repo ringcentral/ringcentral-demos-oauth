@@ -34,3 +34,16 @@ In server-side web app such as PHP, Rails, Django, etc. where the operations occ
 |------|-------------|
 | Login page | This is any page with a Login button. This page will open the popup and listen for the redirect, after which it will shut down the popup window. There's no need to do any client-side processing except to shutdown the popup and refresh the page. |
 | Callback page | The callback query string will be processed server-side. Nothing is needed client-side. |
+
+## Links
+
+* Documentation
+  * [RingCentral Developer Guide](https://developer.ringcentral.com/api-docs/latest/index.html#!#AuthorizationCodeFlow)
+  * [IETF OAuth 2.0 RFC](https://tools.ietf.org/html/rfc6749) [Authorization Code flow](https://tools.ietf.org/html/rfc6749#section-1.3.1)
+* SDKs with built-in Authorization Code helpers (others, like Python can still be used)
+  * [ringcentral-js](https://github.com/ringcentral/ringcentral-js)
+  * [ringcentral-sdk-ruby](https://github.com/grokify/ringcentral-sdk-ruby)
+* Example Code
+  * [ringcentral-js/demo/oauth](https://github.com/ringcentral/ringcentral-js/tree/5f5197ccb93410d732410127d54449e79ec5c64d/demo/oauth)
+  * [ringcentral-oauth-demos](https://github.com/grokify/ringcentral-oauth-demos) - this project
+  * [ringcentral-cti-demo-js](https://github.com/ringcentral/ringcentral-cti-demo-js) 
