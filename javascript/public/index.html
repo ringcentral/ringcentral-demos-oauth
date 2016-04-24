@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="/config.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+        <script src="/components/es6-promise/promise.min.js"></script>
+        <script src="/components/fetch/fetch.js"></script>
+        <script src="/components/pubnub/web/pubnub.min.js"></script>
+        <script src="/components/ringcentral/build/ringcentral.min.js"></script>
+        <script>
+
+var OAuthCode = function(rcsdk, config) {
+    this.config = config;
+    this.loginPopup  = function() {
+        var authUri = rcsdk.platform().authUrl({
+            redirectUri: this.config['RC_APP_REDIRECT_URL']
+        })
+        this.loginPopupUri(authUri, this.config['RC_APP_REDIRECT_URL']);
+    }
+    this.loginPopupUri  = function(authUri, redirectUri) {
+        var win         = window.open(authUri, 'windowname1', 'width=800, height=600'); 
+
+        var pollOAuth   = window.setInterval(function() { 
+            try {
+                console.log(win.document.URL);
+                if (win.document.URL.indexOf(redirectUri) != -1) {
+                    window.clearInterval(pollOAuth);
+
+                    var qs = rcsdk.platform().parseAuthRedirectUrl(win.document.URL);
+                    qs.redirectUri = redirectUri;
+
+                    if ('code' in qs) {
+                        var res = rcsdk.platform()
+                            .login(qs)
+                            .then(function(response) {
+                                document.getElementById('token').innerHTML = response.text();
+                                win.close();
+                            }).catch(function(e) {
+                                console.log(e);
+                                document.write("E_AUTHZ_ERR");
+                                win.close();
+                            });
+                    } else {
+                        console.log("E_NO_CODE")
+                        win.close();
+                    }                 
+                }
+            } catch(e) {
+                console.log(e)
+            }
+        }, 100);
+    }
+}
+
+var rcsdk = new RingCentral.SDK({
+    server: config['RC_APP_SERVER_URL'],
+    appKey: config['RC_APP_KEY'],
+    appSecret: config['RC_APP_SECRET']
+});
+
+var oauth = new OAuthCode(rcsdk, config);
+
+        </script>
+    </head>
+    <body>
+        <h1>RingCentral 3-Legged OAuth 2.0 Demo in JavaScript</h1>
+
+        <p><input type="button" onclick="oauth.loginPopup()" value="Login with RingCentral"></p>
+
+        <p>After retrieving the token use the Python SDK's auth class's set_data method to load the access_token.</p>
+
+        <p>Access Token</p>
+        <pre id="token" style="background-color:#efefef;padding:1em;overflow-x:scroll"></pre>
+
+    </body>
+</html>

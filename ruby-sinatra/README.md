@@ -41,4 +41,10 @@ Open the web page:
 $ ruby app.rb
 ```
 
+Go to the URL:
+
+```
+http://localhost:4567
+````
+
 Then click the <input type="button" value="Login with RingCentral"> button to authorize the demo app and view the access token.

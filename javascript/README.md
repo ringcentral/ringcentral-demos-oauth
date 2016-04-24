@@ -1,0 +1,41 @@
+RingCentral 3-Legged OAuth Demo in JavaScript
+=============================================
+
+## Overview
+
+This is a quick 3-legged OAuth demo that runs using client-side JavaScript
+
+## Installation
+
+```bash
+$ cd ringcentral-oauth-demos/javascript
+$ sh bower_install.sh 
+```
+
+## Configuration
+
+Edit the `.env` file to add your application key and application secret.
+
+```bash
+$ cd ringcentral-oauth-demos/javascript/public
+$ cp config-sample.js config.js
+$ vi config.js
+```
+
+## Usage
+
+Open the web page:
+
+```bash
+$ npm install -g http-server
+$ cd ringcentral-oauth-demos/javascript
+$ http-server public
+```
+
+Go to the URL:
+
+```
+http://localhost:4567
+````
+
+Then click the <input type="button" value="Login with RingCentral"> button to authorize the demo app and view the access token.

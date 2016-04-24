@@ -1,6 +1,8 @@
 php/composer.lock
 php/composer.phar
 php/vendor
+javascript/public/components
+javascript/public/config.js
 python-bottle/.env
 ruby-sinatra/.env
 ruby-sinatra/Gemfile.lock
