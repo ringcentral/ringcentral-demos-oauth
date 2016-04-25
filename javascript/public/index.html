@@ -4,8 +4,6 @@
         <meta charset="UTF-8">
         <script src="/config.js"></script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-
         <script src="/components/es6-promise/promise.min.js"></script>
         <script src="/components/fetch/fetch.js"></script>
         <script src="/components/pubnub/web/pubnub.min.js"></script>
@@ -50,7 +48,7 @@ var OAuthCode = function(rcsdk, config) {
                 }
             } catch(e) {
                 console.log(e);
-                win.close();
+                //win.close();
             }
         }, 100);
     }
