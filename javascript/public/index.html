@@ -69,7 +69,7 @@ var oauth = new OAuthCode(rcsdk, config);
 
         <p><input type="button" onclick="oauth.loginPopup()" value="Login with RingCentral"></p>
 
-        <p>After retrieving the token use the Python SDK's auth class's set_data method to load the access_token.</p>
+        <p>After receiving the authorization_code, use the JavaScript SDK's platform class's login method to retrieve the access_token.</p>
 
         <p>Access Token</p>
         <pre id="token" style="background-color:#efefef;padding:1em;overflow-x:scroll"></pre>
