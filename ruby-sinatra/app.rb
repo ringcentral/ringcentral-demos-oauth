@@ -26,8 +26,6 @@ end
 
 get '/callback' do
   code = params.key?('code') ? params['code'] : ''
-  if code
-    token = client.authorize_code(code)
-  end
+  token = client.authorize_code(code) if code
   'code ' + code
 end
