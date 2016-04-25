@@ -15,9 +15,8 @@ get '/' do
   token_json = client.token.nil? \
     ? '' : MultiJson.encode(client.token.to_hash, pretty: true)
 
-  auth_url = client.authorize_url()
   erb :index, locals: {
-    authorize_uri: auth_url,
+    authorize_uri: client.authorize_url(),
     redirect_uri: client.app_config.redirect_url,
     token_json: token_json}
 end
