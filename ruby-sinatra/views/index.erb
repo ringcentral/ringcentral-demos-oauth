@@ -9,7 +9,6 @@ var config = {
     authUri: '<%= authorize_uri %>',
     redirectUri: '<%= redirect_uri %>',
 }
-config['authUri'] = config['authUri'].replace(/&amp;/g, '&');
 
 var OAuthCode = function(config) {
     this.config = config;
