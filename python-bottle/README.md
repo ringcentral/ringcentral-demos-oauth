@@ -9,8 +9,8 @@ This is a quick 3-legged OAuth demo that runs using Python 2.7 and Bottle with t
 
 ```bash
 $ pip install bottle
-$ pip install requests
 $ pip install python-dotenv
+$ pip install requests
 $ pip install ringcentral
 ```
 
