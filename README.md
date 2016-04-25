@@ -1,11 +1,11 @@
 RingCentral OAuth Demos
 =======================
 
-This project provides 3-legged OAuth demos using the [OAuth 2.0](https://tools.ietf.org/html/rfc6749) [Authorization Code flow](https://tools.ietf.org/html/rfc6749#section-1.3.1) for the RingCentral API in various languages using [official and community SDKs](https://developer.ringcentral.com/library/sdks.html).
+This project provides 3-legged OAuth demos using the [OAuth 2.0](https://tools.ietf.org/html/rfc6749) [Authorization Code flow](https://tools.ietf.org/html/rfc6749#section-1.3.1) for the [RingCentral REST API](https://developers.ringcentral.com) in various languages using [official and community SDKs](https://developer.ringcentral.com/library/sdks.html).
 
 The authorization code flow is useful for developers because it delegates the entire authentication, authorization, reset password and SAML-based single sign-on (SSO) flows to RingCentral who provides a consistent user experience.
 
-The demos here so far use the popup approach for 3-legged OAuth.
+The demos use the popup approach for 3-legged OAuth.
 
 For more information, see the [RingCentral API Developer Guide on Authorization Code Flow](https://developer.ringcentral.com/api-docs/latest/index.html#!#AuthorizationCodeFlow).
 
@@ -47,3 +47,11 @@ In server-side web app such as PHP, Rails, Django, etc. where the operations occ
   * [ringcentral-js/demo/oauth](https://github.com/ringcentral/ringcentral-js/tree/5f5197ccb93410d732410127d54449e79ec5c64d/demo/oauth)
   * [ringcentral-oauth-demos](https://github.com/grokify/ringcentral-oauth-demos) - this project
   * [ringcentral-cti-demo-js](https://github.com/ringcentral/ringcentral-cti-demo-js) 
+
+## Contributing
+
+1. Fork it (http://github.com/grokify/ringcentral-oauth-demos/fork)
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
