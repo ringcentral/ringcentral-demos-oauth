@@ -12,10 +12,8 @@ config = RingCentralSdk::REST::Config.new.load_dotenv
 client.set_app_config config.app
 
 get '/' do
-  token_json = ''
-  unless client.token.nil?
-    token_json = MultiJson.encode(client.token.to_hash, pretty: true)
-  end
+  token_json = client.token.nil? \
+    ? '' : MultiJson.encode(client.token.to_hash, pretty: true)
 
   auth_url = client.authorize_url().gsub(/&/, '&amp;')
   erb :index, locals: {
@@ -27,5 +25,5 @@ end
 get '/callback' do
   code = params.key?('code') ? params['code'] : ''
   token = client.authorize_code(code) if code
-  'code ' + code
+  ''
 end
