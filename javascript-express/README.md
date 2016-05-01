@@ -31,7 +31,9 @@ In the [Developer Portal](http://developer.ringcentral.com/), ensure the redirec
 http://localhost:8080/callback
 ```
 
-Note: If you set the following parameters, you can start this demo using TLS. Be sure you are using HTTPS for your redirect URI.
+#### Using TLS
+
+If you set the following parameters, you can start this demo using TLS. Be sure you are using HTTPS for your redirect URI.
 
 | Property | Information |
 |----------|-------------|
