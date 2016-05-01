@@ -66,5 +66,7 @@ app.get('/callback', function(req, res) {
         console.log('ERR ' + e.message  || 'Server cannot authorize user');
         res.send('');
       });
+  } else {
+    res.send('');
   }
 });
