@@ -13,7 +13,7 @@ Demos are provided for:
 
 * Server-Side Web Apps (more secure)
   * [C# with Nancy](https://github.com/grokify/ringcentral-oauth-demos/tree/master/csharp-nancy)
-  * [JavaScript with Express](https://github.com/grokify/ringcentral-oauth-demos/tree/master/javascript-express) (supports TLS)
+  * [JavaScript with Express](https://github.com/grokify/ringcentral-oauth-demos/tree/master/javascript-express) (with optional TLS)
   * [Python 2.7 with Bottle](https://github.com/grokify/ringcentral-oauth-demos/tree/master/python-bottle)
   * [Ruby with Sinatra](https://github.com/grokify/ringcentral-oauth-demos/tree/master/ruby-sinatra)
 * Client-Side Web Apps (less secure)
