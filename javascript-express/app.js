@@ -23,7 +23,7 @@ if (useTls) {
   }, app).listen(port, function() {
     console.log('LISTEN_HTTPS ' + port);    
   });
-} else if (! useTls) {
+} else {
   server = require('http').Server(app);
   server.listen(port, function() {
     console.log('LISTEN_HTTP ' + port);    
