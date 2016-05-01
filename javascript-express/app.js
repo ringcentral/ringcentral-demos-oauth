@@ -1,5 +1,4 @@
 require('dotenv').config();
-var https = require('https');
 var app = require('express')();
 var ringcentral = require('ringcentral');
 
@@ -15,19 +14,21 @@ var port = process.env.MY_APP_PORT;
 var useTls = process.env.MY_APP_TLS_ENABLED > 0 ? true : false;
 
 if (useTls) {
-  var tls = require('tls'),
-      fs = require('fs');
-  server = https.createServer({
-    key: fs.readFileSync(process.env.MY_APP_TLS_PRIVATE_KEY),
-    cert: fs.readFileSync(process.env.MY_APP_TLS_PUBLIC_CERT)
-  }, app).listen(port, function() {
-    console.log('LISTEN_HTTPS ' + port);    
-  });
+  var fs = require('fs');
+  server = require('https')
+    .createServer({
+      key: fs.readFileSync(process.env.MY_APP_TLS_PRIVATE_KEY),
+      cert: fs.readFileSync(process.env.MY_APP_TLS_PUBLIC_CERT)
+    }, app)
+    .listen(port, function() {
+      console.log('LISTEN_HTTPS ' + port);    
+    });
 } else {
-  server = require('http').Server(app);
-  server.listen(port, function() {
-    console.log('LISTEN_HTTP ' + port);    
-  });
+  server = require('http')
+    .Server(app)
+    .listen(port, function() {
+      console.log('LISTEN_HTTP ' + port);    
+    });
 }
 
 // Start RingCentral SDK
