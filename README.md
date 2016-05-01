@@ -37,6 +37,18 @@ In server-side web app such as PHP, Rails, Django, etc. where the operations occ
 | Login page | This is any page with a Login button. This page will open the popup and listen for the redirect, after which it will shut down the popup window. There's no need to do any client-side processing except to shutdown the popup and refresh the page. |
 | Callback page | The callback query string will be processed server-side. Nothing is needed client-side. |
 
+## Screenshots
+
+The following are example screenshots of the authentication and authorization pages shown.
+
+### Authentication
+
+![](images/ringcentral_oauth_authentication.png)
+
+### Authorization
+
+![](images/ringcentral_oauth_authorization.png)
+
 ## Links
 
 * Documentation
