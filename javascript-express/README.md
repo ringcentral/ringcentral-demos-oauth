@@ -31,11 +31,11 @@ In the [Developer Portal](http://developer.ringcentral.com/), ensure the redirec
 http://localhost:8080/callback
 ```
 
-Note: If you set the following parameters, you can start this demo using TLS:
+Note: If you set the following parameters, you can start this demo using TLS. Be sure you are using HTTPS for your redirect URI.
 
 | Property | Information |
 |----------|-------------|
-| `MY_APP_TLS_ENABLED | Set to `1` for HTTPS and `0` for HTTP |
+| `MY_APP_TLS_ENABLED` | Set to `1` for HTTPS and `0` for HTTP |
 | `MY_APP_TLS_PRIVATE_KEY` | Set to path to PEM file for private key |
 | `MY_APP_TLS_CERTIFICATE` | Set to path to PEM file for certificate |
 
