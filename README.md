@@ -19,16 +19,9 @@ Demos are provided for:
 * Client-Side Web Apps (less secure)
   * [JavaScript](https://github.com/grokify/ringcentral-oauth-demos/tree/master/javascript)
 
-## Client-Side Web Apps
+## Description
 
-Client-side web apps using JavaScript have a feature in that the callback URL does not need to contain any processing either on the client-side or the server-side. The entire flow can be managed by the parent JavaScript page that is initiating the login.
-
-| Page | Description |
-|------|-------------|
-| Login page | This is any page with a Login button. This page will open the popup and listen for the redirect. For client-side processing, this page will also retrieve the query string parameters from the callback page. |
-| Callback page | The minimum requirement is for the page to not be redirected to a URL without the `redirect_uri` since the parent window will poll for the redirect. |
-
-## Server-Side Web Apps
+### Server-Side Web Apps
 
 In server-side web app such as PHP, Rails, Django, etc. where the operations occur are slightly different. In these cases, the callback URL should process the callback to retrieve the authorization code and exchange it for an access token.
 
@@ -36,6 +29,15 @@ In server-side web app such as PHP, Rails, Django, etc. where the operations occ
 |------|-------------|
 | Login page | This is any page with a Login button. This page will open the popup and listen for the redirect, after which it will shut down the popup window. There's no need to do any client-side processing except to shutdown the popup and refresh the page. |
 | Callback page | The callback query string will be processed server-side. Nothing is needed client-side. |
+
+### Client-Side Web Apps
+
+Client-side web apps using JavaScript have a feature in that the callback URL does not need to contain any processing either on the client-side or the server-side. The entire flow can be managed by the parent JavaScript page that is initiating the login.
+
+| Page | Description |
+|------|-------------|
+| Login page | This is any page with a Login button. This page will open the popup and listen for the redirect. For client-side processing, this page will also retrieve the query string parameters from the callback page. |
+| Callback page | The minimum requirement is for the page to not be redirected to a URL without the `redirect_uri` since the parent window will poll for the redirect. |
 
 ## Screenshots
 
