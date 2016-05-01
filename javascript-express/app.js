@@ -1,7 +1,6 @@
 require('dotenv').config();
 var https = require('https');
 var app = require('express')();
-
 var ringcentral = require('ringcentral');
 
 // Configure Mustache
@@ -10,10 +9,10 @@ app.engine('mustache', mustacheExpress());
 app.set('view engine', 'mustache');
 app.set('views', __dirname + '/views');
 
-var useTls = process.env.MY_APP_TLS_ENABLED > 0 ? true : false;
 var server = null;
-
 var port = process.env.MY_APP_PORT;
+
+var useTls = process.env.MY_APP_TLS_ENABLED > 0 ? true : false;
 
 if (useTls) {
   var tls = require('tls'),
