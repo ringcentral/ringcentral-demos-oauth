@@ -10,7 +10,7 @@ This is a quick 3-legged OAuth demo that runs using Ruby and Sinatra with the [R
 ### Via Bundler
 
 ```bash
-$ git clone https://github.com/grokify/ringcentral-oauth-demos
+$ git clone https://github.com/grokify/ringcentral-demos-oauth
 $ cd ringcentral-oauth-demos/ruby-sinatra
 $ bundle
 ```
@@ -20,7 +20,7 @@ $ bundle
 ```bash
 $ gem install ringcentral_sdk
 $ gem install sinatra
-$ git clone https://github.com/grokify/ringcentral-oauth-demos
+$ git clone https://github.com/grokify/ringcentral-demos-oauth
 ```
 
 ## Configuration
@@ -28,7 +28,7 @@ $ git clone https://github.com/grokify/ringcentral-oauth-demos
 Edit the `.env` file to add your application key and application secret.
 
 ```bash
-$ cd ringcentral-oauth-demos/ruby-sinatra
+$ cd ringcentral-demos-oauth/ruby-sinatra
 $ cp config-sample.env.txt .env
 $ vi .env
 ```

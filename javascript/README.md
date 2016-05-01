@@ -8,7 +8,7 @@ This is a quick 3-legged OAuth demo that runs using client-side JavaScript with 
 ## Installation
 
 ```bash
-$ cd ringcentral-oauth-demos/javascript
+$ cd ringcentral-demos-oauth/javascript
 $ sh bower_install.sh 
 ```
 
@@ -17,7 +17,7 @@ $ sh bower_install.sh
 Edit the `.env` file to add your application key and application secret.
 
 ```bash
-$ cd ringcentral-oauth-demos/javascript/public
+$ cd ringcentral-demos-oauth/javascript/public
 $ cp config-sample.js config.js
 $ vi config.js
 ```
@@ -34,7 +34,7 @@ Open the web page:
 
 ```bash
 $ npm install -g http-server
-$ cd ringcentral-oauth-demos/javascript
+$ cd ringcentral-demos-oauth/javascript
 $ http-server public
 ```
 

@@ -11,13 +11,12 @@ The demo is created with Visual Studio 2015 Community Edition and .NET framework
 
 Open the solution file with Visual Studio, build the solution. NuGet packages will be automatically installed.
 
-
 ## Configuration
 
 Edit the `config.json` file to add your application key and application secret.
 
 ```powershell
-$ cd ringcentral-oauth-demos\csharp-nancy\csharp-nancy
+$ cd ringcentral-demos-oauth\csharp-nancy\csharp-nancy
 $ cp .\config-sample.json .\bin\Debug\config.json
 $ vim .\bin\Debug\config.json
 ```

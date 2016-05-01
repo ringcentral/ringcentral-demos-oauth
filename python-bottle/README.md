@@ -8,6 +8,7 @@ This is a quick 3-legged OAuth demo that runs using Python 2.7 and Bottle with t
 ## Installation
 
 ```bash
+$ git clone https://github.com/grokify/ringcentral-demos-oauth
 $ pip install bottle
 $ pip install python-dotenv
 $ pip install requests
@@ -19,7 +20,7 @@ $ pip install ringcentral
 Edit the `.env` file to add your application key and application secret.
 
 ```bash
-$ cd ringcentral-oauth-demos/python-bottle
+$ cd ringcentral-demos-oauth/python-bottle
 $ cp config-sample.env.txt .env
 $ vi .env
 ```
