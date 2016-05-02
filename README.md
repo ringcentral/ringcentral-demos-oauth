@@ -26,7 +26,7 @@ From a development perspective, the application needs to make 2 HTTP requests:
 
 The examples here show both of the two above steps and integrate with existing SDKs where available.
 
-For more information, see the [RingCentral API Developer Guide on Authorization Code Flow](https://developer.ringcentral.com/api-docs/latest/index.html#!#AuthorizationCodeFlow).
+For a step-by-step guide, see the [RingCentral API Developer Guide section on Authorization Code Flow](https://developer.ringcentral.com/api-docs/latest/index.html#!#AuthorizationCodeFlow).
 
 ### Server-Side Web Apps
 
