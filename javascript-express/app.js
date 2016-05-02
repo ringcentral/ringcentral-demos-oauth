@@ -46,8 +46,8 @@ app.get('/', function(req, res) {
   // Render home page with params
   res.render('index', {
     authorize_uri: rcsdk.platform().authUrl({
-      brandId: process.env.RC_APP_BRAND_ID,
-      redirectUri: process.env.RC_APP_REDIRECT_URL
+      brandId: process.env.RC_APP_BRAND_ID,        // optional
+      redirectUri: process.env.RC_APP_REDIRECT_URL // optional if 1 configured
     }),
     redirect_uri: process.env.RC_APP_REDIRECT_URL,
     token_json: token_json
