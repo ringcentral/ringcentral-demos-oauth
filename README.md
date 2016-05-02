@@ -1,13 +1,11 @@
 RingCentral OAuth Demos
 =======================
 
-This project provides 3-legged OAuth demos using the [OAuth 2.0](https://tools.ietf.org/html/rfc6749) [Authorization Code flow](https://tools.ietf.org/html/rfc6749#section-1.3.1) for the [RingCentral REST API](https://developers.ringcentral.com) in various languages using [official and community SDKs](https://developer.ringcentral.com/library/sdks.html).
+This project provides 3-legged OAuth demos using the [OAuth 2.0](https://tools.ietf.org/html/rfc6749) [Authorization Code flow](https://tools.ietf.org/html/rfc6749#section-1.3.1) for the [RingCentral REST API](https://developers.ringcentral.com) in various languages using [official and community SDKs](https://developer.ringcentral.com/library/sdks.html) as described in the [API Developer Guide](https://developer.ringcentral.com/api-docs/latest/index.html#!#AuthorizationCodeFlow).
 
 The authorization code flow is useful for developers because developers have to do less work and the user is presented with a familiar user experience. It accomplishes these goals by redirecting to RingCentral to mange the authentication, authorization, reset password and single sign-on (SSO) flows using a consistent user experience.
 
 The demos use the popup approach for 3-legged OAuth.
-
-For more information, see the [RingCentral API Developer Guide on Authorization Code Flow](https://developer.ringcentral.com/api-docs/latest/index.html#!#AuthorizationCodeFlow).
 
 Demos are provided for:
 
@@ -27,6 +25,8 @@ From a development perspective, the application needs to make 2 HTTP requests:
 2. Request for Access Token: When the window is redirected back successfully, it will include the following query string parameters: `code` for the authorization code and `state` for the state. Assuming the `state` matches, exchange the authorization code for an `access_token` with optional `refresh_token`.
 
 The examples here show both of the two above steps and integrate with existing SDKs where available.
+
+For more information, see the [RingCentral API Developer Guide on Authorization Code Flow](https://developer.ringcentral.com/api-docs/latest/index.html#!#AuthorizationCodeFlow).
 
 ### Server-Side Web Apps
 
