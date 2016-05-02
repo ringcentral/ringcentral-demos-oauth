@@ -1,3 +1,4 @@
+*.env
 *.pem
 php/composer.lock
 php/composer.phar
