@@ -40,7 +40,7 @@ var rcsdk = new ringcentral({
 
 app.get('/', function(req, res) {
   // Get token for display after OAuth
-  token = rcsdk.platform().auth().data();
+  var token = rcsdk.platform().auth().data();
   token_json = token['access_token'] ? JSON.stringify(token, null, ' ') : '';
 
   // Render home page with params
