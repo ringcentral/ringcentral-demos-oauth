@@ -7,11 +7,12 @@ This is a quick 3-legged OAuth demo that runs using PHP.
 
 ## Installation
 
-### Via NPM
+### Via Composer
 
 ```bash
 $ git clone https://github.com/grokify/ringcentral-demos-oauth
 $ cd ringcentral-demos-oauth/php
+$ curl -sS https://getcomposer.org/installer | php
 $ composer install
 ```
 
