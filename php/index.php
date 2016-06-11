@@ -6,9 +6,13 @@ use RingCentral\SDK\SDK;
 
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Start the session
+session_start();
+
 // Parse the .env file
 $dotenv = new Dotenv\Dotenv(getcwd());
 $dotenv -> load();
+
 
 // Create SDK instance
 $rcsdk = new SDK($_ENV['RC_AppKey'],$_ENV['RC_AppSecret'],$_ENV['RC_Server'], 'OAuth-Demo-PHP', '1.0.0');
@@ -30,14 +34,7 @@ $url = $platform->createUrl('/restapi/oauth/authorize' . '?' . http_build_query(
         'addServer' => true
     )
 );
-/*
-include 'callback.php';
-if(isset($_GET["code"]))
-{
-    $qs = $_GET["code"];
-    print "The code is :" . $qs . PHP_EOL;
-}
-*/
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -93,7 +90,7 @@ if(isset($_GET["code"]))
         <p>After retrieving the token use the PHP SDK's auth class's set_data method to load the access_token.</p>
 
         <p>Access Token</p>
-        <pre style="background-color:#efefef;padding:1em;overflow-x:scroll"><?php echo $token_json ?></pre>
+        <pre style="background-color:#efefef;padding:1em;overflow-x:scroll"><?php echo isset($_SESSION['response']) ? $_SESSION['response'] : '';?></pre>
 
         <p>More info:</p>
         <ul>
