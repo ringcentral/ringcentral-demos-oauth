@@ -1,10 +1,10 @@
 <?php
 
+require_once(__DIR__ . '/vendor/autoload.php');
+
 use RingCentral\SDK\Http\HttpException;
 use RingCentral\http\Response;
 use RingCentral\SDK\SDK;
-
-require_once(__DIR__ . '/vendor/autoload.php');
 
 // Start the session
 session_start();
@@ -13,22 +13,22 @@ session_start();
 $dotenv = new Dotenv\Dotenv(getcwd());
 $dotenv -> load();
 
-
 // Create SDK instance
 $rcsdk = new SDK($_ENV['RC_AppKey'],$_ENV['RC_AppSecret'],$_ENV['RC_Server'], 'OAuth-Demo-PHP', '1.0.0');
 
 $platform = $rcsdk->platform();
 
-$url = $platform->createUrl('/restapi/oauth/authorize' . '?' . http_build_query(
-    array (
-        'response_type' => 'code',
-        'redirect_uri'  => $_ENV['RC_Redirect_Url'],
-        'client_id'     => $_ENV['RC_AppKey'],
-        'state'         => $_ENV['RC_State'],
-        'brand_id '     => '',
-        'display'       => '',  
-        'prompt'        => ''
-      )
+$url = $platform->createUrl('/restapi/oauth/authorize' . '?' .
+	http_build_query(
+        array (
+            'response_type' => 'code',
+            'redirect_uri'  => $_ENV['RC_Redirect_Url'],
+            'client_id'     => $_ENV['RC_AppKey'],
+            'state'         => $_ENV['RC_State'],
+            'brand_id '     => '',
+            'display'       => '',  
+            'prompt'        => ''
+        )
     ),
     array (
         'addServer' => true
