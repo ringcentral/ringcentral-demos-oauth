@@ -13,7 +13,7 @@ This is a quick 3-legged OAuth demo that runs using PHP.
 $ git clone https://github.com/grokify/ringcentral-demos-oauth
 $ cd ringcentral-demos-oauth/php
 $ curl -sS https://getcomposer.org/installer | php
-$ composer install
+$ php composer.phar install
 ```
 
 ## Configuration

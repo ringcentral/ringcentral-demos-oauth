@@ -4,75 +4,40 @@ use RingCentral\SDK\Http\HttpException;
 use RingCentral\http\Response;
 use RingCentral\SDK\SDK;
 
-
 require_once(__DIR__ . '/vendor/autoload.php');
-	
-	// Parse the .env file
-	$dotenv = new Dotenv\Dotenv(getcwd());
 
-	$dotenv -> load();
+// Parse the .env file
+$dotenv = new Dotenv\Dotenv(getcwd());
+$dotenv -> load();
 
-	// Create SDK instance
-	$rcsdk = new SDK($_ENV['RC_AppKey'],$_ENV['RC_AppSecret'],$_ENV['RC_Server'], 'OAuth-Demo-PHP', '1.0.0');
+// Create SDK instance
+$rcsdk = new SDK($_ENV['RC_AppKey'],$_ENV['RC_AppSecret'],$_ENV['RC_Server'], 'OAuth-Demo-PHP', '1.0.0');
 
-	$platform = $rcsdk->platform();
+$platform = $rcsdk->platform();
 
-
-		$url = $platform->createUrl('/restapi/oauth/authorize' . '?' . http_build_query(
-                    array (
-                        'response_type' => 'code',
-                        'redirect_uri'   => $_ENV['RC_Redirect_Url'],
-                        'client_id'      => $_ENV['RC_AppKey'],
-                        'state'          => $_ENV['RC_State'],
-                        'brand_id '      => '',
-                        'display'        => '',  
-                        'prompt'         => ''
-                    ))
-            ,array (
-                'addServer' => true
-            ));
-
-		
-
-		include 'callback.php';
-
-		// echo "The code is :" . $qs . PHP_EOL;
-
-		if(isset($_GET["code"]))
-		{
-			$qs = $_GET["code"];
-
-			print "The code is :" . $qs . PHP_EOL;
-		}
-
-		// $callback = false;
-
-
-
-
-		// 	function setInterval($parseAuthRedirectUrl, $milliseconds)
-		// 	{
-		// 		$seconds=(int)$milliseconds/1000;
-		// 		while(!$callback)
-		// 		    {
-		// 		        $qs = parseAuthRedirectUrl();
-		// 		        sleep($seconds);
-		// 		    }
-		// 	}
-
-		// 	setInterval(parseAuthRedirectUrl($url), 100);
-		
-
-		// function parseAuthRedirectUrl()
-		// {
-		// 	if(isset($_GET["code"]))
-		// 	{
-		// 		$qs = $_GET["code"];
-		// 		$callback = true;
-		// 		print "The code is :" . $qs . PHP_EOL;
-		// 	}
-		// }
-		// print "The Url is :" . $url . PHP_EOL;
+$url = $platform->createUrl('/restapi/oauth/authorize' . '?' . http_build_query(
+    array (
+        'response_type' => 'code',
+        'redirect_uri'  => $_ENV['RC_Redirect_Url'],
+        'client_id'     => $_ENV['RC_AppKey'],
+        'state'         => $_ENV['RC_State'],
+        'brand_id '     => '',
+        'display'       => '',  
+        'prompt'        => ''
+      )
+    ),
+    array (
+        'addServer' => true
+    )
+);
+/*
+include 'callback.php';
+if(isset($_GET["code"]))
+{
+    $qs = $_GET["code"];
+    print "The code is :" . $qs . PHP_EOL;
+}
+*/
 ?>
 <!DOCTYPE html>
 <html>
@@ -104,9 +69,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 		                if (win.document.URL.indexOf(redirectUri) != -1) {
 		                    window.clearInterval(pollOAuth);
 
-		                     win.close();
-                    		 location.reload();
-                
+		                    win.close();
+                    		location.reload();
 		                }
 		            } catch(e) {
 		                console.log(e);
@@ -129,7 +93,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
         <p>After retrieving the token use the PHP SDK's auth class's set_data method to load the access_token.</p>
 
         <p>Access Token</p>
-        <pre style="background-color:#efefef;padding:1em;overflow-x:scroll">{{ token_json }}</pre>
+        <pre style="background-color:#efefef;padding:1em;overflow-x:scroll"><?php echo $token_json ?></pre>
 
         <p>More info:</p>
         <ul>
