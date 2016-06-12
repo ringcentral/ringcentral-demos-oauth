@@ -11,7 +11,7 @@ session_start();
 
 // Parse the .env file
 $dotenv = new Dotenv\Dotenv(getcwd());
-$dotenv -> load();
+$dotenv->load();
 
 // Create SDK instance
 $rcsdk = new SDK($_ENV['RC_AppKey'],$_ENV['RC_AppSecret'],$_ENV['RC_Server'], 'OAuth-Demo-PHP', '1.0.0');
