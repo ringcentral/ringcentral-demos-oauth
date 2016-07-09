@@ -76,7 +76,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="RingCentral, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RingCentralSDK.1.0.0\lib\net40\RingCentral.dll</HintPath>
+      <HintPath>..\packages\RingCentralSDK.1.0.1\lib\net40\RingCentral.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
