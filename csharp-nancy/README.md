@@ -3,7 +3,7 @@ RingCentral 3-Legged OAuth Demo in CSharp
 
 ## Overview
 
-This is a quick 3-legged OAuth demo that runs using CSharp and [Nancy](http://nancyfx.org/) with the [RingCentral CSharp SDK](https://github.com/ringcentral/ringcentral-csharp) v0.1.21.
+This is a quick 3-legged OAuth demo that runs using CSharp and [Nancy](http://nancyfx.org/) with the [RingCentral CSharp SDK](https://github.com/ringcentral/ringcentral-csharp) v1.0.1
 
 ## Installation
 
