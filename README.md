@@ -1,6 +1,9 @@
 RingCentral OAuth Demos
 =======================
 
+[![Stack Overflow][stackoverflow-svg]][stackoverflow-url]
+[![Chat][chat-svg]][chat-url]
+
 This project provides 3-legged OAuth demos using the [OAuth 2.0](https://tools.ietf.org/html/rfc6749) [Authorization Code flow](https://tools.ietf.org/html/rfc6749#section-1.3.1) for the [RingCentral REST API](https://developers.ringcentral.com) in various languages using [official and community SDKs](https://developer.ringcentral.com/library/sdks.html) as described in the [API Developer Guide](https://developer.ringcentral.com/api-docs/latest/index.html#!#AuthorizationCodeFlow).
 
 The authorization code flow is useful for developers because developers have to do less work and the user is presented with a familiar user experience. It accomplishes these goals by redirecting to RingCentral to mange the authentication, authorization, reset password and single sign-on (SSO) flows using a consistent user experience.
@@ -79,3 +82,8 @@ The following are example screenshots of the authentication and authorization pa
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+ [chat-svg]: https://img.shields.io/badge/chat-on%20glip-orange.svg
+ [chat-url]: https://glipped.herokuapp.com/
+ [stackoverflow-svg]: https://img.shields.io/badge/Stack%20Overflow-ringcentral-orange.svg
+ [stackoverflow-url]: https://stackoverflow.com/questions/tagged/ringcentral
