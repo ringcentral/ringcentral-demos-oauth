@@ -52,7 +52,11 @@ Client-side web apps using JavaScript have a feature in that the callback URL do
 
 ## Screenshots
 
-The following are example screenshots of the authentication and authorization pages shown.
+The following are example screenshots of the email/phone number selection, authentication and authorization pages shown.
+
+### Email/Phone Number Selection
+
+![](_images/ringcentral_oauth_email.png)
 
 ### Authentication
 
