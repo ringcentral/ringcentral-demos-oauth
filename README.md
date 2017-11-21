@@ -52,7 +52,11 @@ Client-side web apps using JavaScript have a feature in that the callback URL do
 
 ## Screenshots
 
-The following are example screenshots of the email/phone number selection, authentication and authorization pages shown.
+The following are example screenshots of the steps the user is presented with on a new login.
+
+1. email/phone number selection
+1. authentication and
+1. authorization
 
 ### Email/Phone Number Selection
 
