@@ -56,15 +56,15 @@ The following are example screenshots of the email/phone number selection, authe
 
 ### Email/Phone Number Selection
 
-![](_images/ringcentral_oauth_email.png)
+![](_images/ringcentral_oauth_email.png){:height="50%" width="50%"}
 
 ### Authentication
 
-![](_images/ringcentral_oauth_authentication.png)
+![](_images/ringcentral_oauth_authentication.png){:height="50%" width="50%"}
 
 ### Authorization
 
-![](_images/ringcentral_oauth_authorization.png)
+![](_images/ringcentral_oauth_authorization.png){:height="50%" width="50%"}
 
 ## Links
 
