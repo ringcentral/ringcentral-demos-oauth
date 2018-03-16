@@ -1,4 +1,5 @@
 source ENV['GEM_SOURCE'] || "https://rubygems.org"
 
-gem 'ringcentral_sdk'
+gem 'dotenv'
+gem 'ringcentral-sdk'
 gem 'sinatra'

@@ -1,5 +1,6 @@
 #!ruby
 
+require 'dotenv'
 require 'sinatra'
 require 'multi_json'
 require 'ringcentral_sdk'
@@ -7,12 +8,17 @@ require 'ringcentral_sdk'
 # Create and edit the .env file:
 # $ cp config-sample.env.txt .env
 
+Dotenv.load(ENV['ENV_PATH'] || '.env')
+
 client = RingCentralSdk::REST::Client.new do |config|
-  config.load_env = true
+  config.app_key = ENV['RINGCENTRAL_CLIENT_ID']
+  config.app_secret = ENV['RINGCENTRAL_CLIENT_SECRET']
+  config.server_url = ENV['RINGCENTRAL_SERVER_URL']
+  config.redirect_url = ENV['RINGCENTRAL_CLIENT_REDIRECT_URL']
 end
 
 set :logger, Logger.new(STDOUT)
-set :port, ENV['MY_APP_PORT']
+set :port, ENV['RINGCENTRAL_CLIENT_PORT']
 
 get '/' do
   token_json = client.token.nil? \
