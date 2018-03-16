@@ -3,40 +3,39 @@
 require 'dotenv'
 require 'sinatra'
 require 'multi_json'
-require 'ringcentral_sdk'
+require 'ringcentral'
 
 # Create and edit the .env file:
 # $ cp config-sample.env.txt .env
 
 Dotenv.load(ENV['ENV_PATH'] || '.env')
 
-client = RingCentralSdk::REST::Client.new do |config|
-  config.app_key = ENV['RINGCENTRAL_CLIENT_ID']
-  config.app_secret = ENV['RINGCENTRAL_CLIENT_SECRET']
-  config.server_url = ENV['RINGCENTRAL_SERVER_URL']
-  config.redirect_url = ENV['RINGCENTRAL_CLIENT_REDIRECT_URL']
-end
+rc = RingCentral.new(
+  ENV['RINGCENTRAL_CLIENT_ID'],
+  ENV['RINGCENTRAL_CLIENT_SECRET'],
+  ENV['RINGCENTRAL_SERVER_URL']
+)
 
 set :logger, Logger.new(STDOUT)
 set :port, ENV['RINGCENTRAL_CLIENT_PORT']
 
 get '/' do
-  token_json = client.token.nil? \
-    ? '' : MultiJson.encode(client.token.to_hash, pretty: true)
+  token_json = rc.token.nil? \
+    ? '' : MultiJson.encode(rc.token, pretty: true)
 
   state = rand(1000000)
   logger.info("OAuth2 Callback Request State #{state}")
 
   erb :index, locals: {
-    authorize_uri: client.authorize_url(state: state),
-    redirect_uri: client.config.redirect_url,
+    authorize_uri: rc.authorize_uri(ENV['RINGCENTRAL_CLIENT_REDIRECT_URL'], state),
+    redirect_uri: ENV['RINGCENTRAL_CLIENT_REDIRECT_URL'],
     token_json: token_json}
 end
 
 get '/callback' do
-  code = params.key?('code') ? params['code'] : ''
+  code  = params.key?('code')  ? params['code'] : ''
   state = params.key?('state') ? params['state'] : ''
+  token = rc.authorize(auth_code: code, redirect_uri: ENV['RINGCENTRAL_CLIENT_REDIRECT_URL']) if code
   logger.info("OAuth2 Callback Response State #{state}")
-  token = client.authorize_code(code) if code
   ''
 end
