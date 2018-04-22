@@ -8,7 +8,7 @@ This is a quick 3-legged OAuth demo that runs using Python 2.7 and Bottle with t
 ## Installation
 
 ```bash
-$ git clone https://github.com/grokify/ringcentral-demos-oauth
+$ git clone https://github.com/ringcentral/ringcentral-demos-oauth
 $ pip install bottle
 $ pip install python-dotenv
 $ pip install requests
@@ -28,7 +28,7 @@ $ vi .env
 In the [Developer Portal](http://developer.ringcentral.com/), ensure the redirect URI in your config file has been entered in your app configuration. By default, the URL is set to the following for this demo:
 
 ```
-http://localhost:8080/callback
+http://localhost:8080/oauth2callback
 ```
 
 ## Usage
