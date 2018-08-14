@@ -9,11 +9,11 @@ Both of them are 3-legged OAuth demo that runs using CSharp and [Nancy](http://n
 
 `csharp-client-nancy` is written with [RingCentral CSharp Client](https://github.com/ringcentral/ringcentral-csharp-client).
 
-`csharp-sdk-nancy` is written with [RingCentral CSharp SDK](https://github.com/ringcentral/ringcentral-csharp).
+**Deprecated:** `csharp-sdk-nancy` is written with [RingCentral CSharp SDK](https://github.com/ringcentral/ringcentral-csharp).
 
 If you are using RingCentral CSharp Client, please refer to `csharp-client-nancy` project.
 
-If you are using RingCentral CSharp SDK, please refer to `csharp-sdk-nancy` project.
+**Deprecated:** If you are using RingCentral CSharp SDK, please refer to `csharp-sdk-nancy` project.
 
 ## Installation
 
@@ -33,7 +33,7 @@ $ cp .\config-sample.json .\bin\Debug\config.json
 $ vim .\bin\Debug\config.json
 ```
 
-#### for `csharp-sdk-nancy`
+#### **Deprecated:** for `csharp-sdk-nancy`
 ```powershell
 $ cd ringcentral-demos-oauth\csharp-nancy\csharp-sdk-nancy
 $ cp .\config-sample.json .\bin\Debug\config.json
